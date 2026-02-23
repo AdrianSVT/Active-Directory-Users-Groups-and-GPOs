@@ -113,3 +113,10 @@ Get-ADGroupMember "IT-Helpdesk"
 <img width="256" height="188" alt="asmiith powershell confirmation" src="https://github.com/user-attachments/assets/fca158e2-64b1-4e0f-8772-c7fa721e6ffb" />
 
 As shown above, both users were configured correctly.
+
+---
+
+## Conclusion
+
+This lab covered the foundational Active Directory tasks that are performed daily in real-world IT environments. From organizing objects with OUs and managing role-based group assignments, to enforcing domain-wide security policies through Group Policy, these skills directly translate to systems administration and identity and access management roles.
+
