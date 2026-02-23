@@ -58,10 +58,6 @@ I repeated the same process to add `asmith` to the `IT-Helpdesk` group. Their id
 <img width="245" height="236" alt="asmith check name" src="https://github.com/user-attachments/assets/99b80cdf-ccb4-4697-946e-9ae96cd22592" />
 <img width="216" height="236" alt="asmith part of it helpdesk" src="https://github.com/user-attachments/assets/d89ea8eb-eebb-4d3e-82b0-e6b4b1590e56" />
 
-
-
-
-
 ---
 
 ## Stage 5: Configuring a Password Policy
@@ -76,11 +72,20 @@ First, I navigated to:
 
 I then expanded **Forest: mydomain.com → Domains → mydomain.com**, right-clicked **Default Domain Policy**, and chose **Edit**.
 
+<img width="276" height="235" alt="right click default domain policy" src="https://github.com/user-attachments/assets/72690800-6c06-451c-8fe5-3d2553b5bd7b" />
+
 Next, I navigated the following path:
 
 **Computer Configuration → Policies → Windows Settings → Security Settings → Account Policies → Password Policy**
 
+<img width="396" height="137" alt="navigating the tree for default policy" src="https://github.com/user-attachments/assets/60114df3-bf37-4d83-b29e-9f68b585fbf6" />
+
 I double-clicked **Minimum Password Length**, set it to `12`, and clicked **Apply**. I then double-clicked **Password must meet complexity requirements** and set it to **Enabled**.
+
+<img width="218" height="262" alt="minimum password length" src="https://github.com/user-attachments/assets/c2a9df64-3acf-4546-ab15-b1a64a794cfe" />
+<img width="215" height="260" alt="password complex set to enabled" src="https://github.com/user-attachments/assets/6ee53f9a-eec0-4e61-8861-9199a923fcab" />
+
+Every user in the domain will now automatically be held to these new password rules.
 
 ---
 
@@ -97,9 +102,14 @@ I then ran the following commands to verify each user's group membership:
 ```powershell
 Get-ADUser jdoe
 Get-ADGroupMember "HR-Team"
+```
 
+<img width="258" height="221" alt="jdoe powershell confimatiion" src="https://github.com/user-attachments/assets/f2ff506d-8a24-44bc-8f9f-9d0f146c3ee0" />
+
+```
 Get-ADUser asmith
 Get-ADGroupMember "IT-Helpdesk"
 ```
+<img width="256" height="188" alt="asmiith powershell confirmation" src="https://github.com/user-attachments/assets/fca158e2-64b1-4e0f-8772-c7fa721e6ffb" />
 
-As shown below, both users were configured correctly.
+As shown above, both users were configured correctly.
